@@ -24,8 +24,6 @@ function Nayoks(props) {
     border: "2px solid red",
     margin:"5px",
     width:"400px"
-  
-
 
   }
   
@@ -42,12 +40,24 @@ function Counter() {
 
   return(
     <div>
-      <h3>Counter: {count}</h3>
+      
       <button onClick={() =>setCount(count + 1) }>Increase</button>
       <button onClick={() =>setCount(count - 1) }>Decrease</button>
+      <h3>Counter: {count}</h3>
+      <DisplayCounter counts={count + 1}></DisplayCounter>
+      <DisplayCounter counts={count + 2}></DisplayCounter>
+      <DisplayCounter counts={count + 3}></DisplayCounter>
+      <DisplayCounter counts={count + 5}></DisplayCounter>
     </div>
   )
   
+}
+function DisplayCounter(props){
+  return (
+    <div>
+      <h2>I can display Counter: {props.counts}</h2>
+    </div>
+  )
 }
 
 export default App;
